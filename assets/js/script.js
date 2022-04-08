@@ -3,10 +3,12 @@ var currentDay = moment();
 $("#currentDay").text(currentDay.format("dddd, MMMM Do"));
 
 // save comments to local storage
-
 for (let i = 0; i < 10; i++) {
 
-    localStorage.setItem(`Comment ${i}`, comment);
+    var savedComment = localStorage.getItem(`Comment ${i}`);
+    if (savedComment) {
+        $(`#comment${i}`).text(savedComment);
+    }
 
     var saveBtn = $(`#saveBtn${i}`);
 
@@ -75,4 +77,4 @@ for (let i = 0; i < allHours.length; i++) {
         hourId.addClass('bg-light');
     };
 
-}
+};

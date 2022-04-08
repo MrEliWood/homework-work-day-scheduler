@@ -6,13 +6,15 @@ $("#currentDay").text(currentDay.format("dddd, MMMM Do"));
 
 for (let i = 0; i < 10; i++) {
 
+    localStorage.setItem(`Comment ${i}`, comment);
+
     var saveBtn = $(`#saveBtn${i}`);
-    var comment = $(`#nine`).val();
 
     saveBtn.click(function(event) {
         event.preventDefault();
-        console.log(comment)
-        localStorage.setItem(`comment${i}`, comment);
+
+        var comment = $(`#comment${i}`).val();
+        localStorage.setItem(`Comment ${i}`, comment);
     });
     
 };
@@ -23,39 +25,39 @@ var currentTime = moment().format('H');
 var allHours = [
     {
         time: 9,
-        id: $('#nine')
+        id: $('#comment1')
     },
     {
         time: 10,
-        id: $('#ten')
+        id: $('#comment2')
     },
     {
         time: 11,
-        id: $('#eleven')
+        id: $('#comment3')
     },
     {
         time: 12,
-        id: $('#twelve')
+        id: $('#comment4')
     },
     {
         time: 13,
-        id: $('#thirteen')
+        id: $('#comment5')
     },
     {
         time: 14,
-        id: $('#fourteen')
+        id: $('#comment6')
     },
     {
         time: 15,
-        id: $('#fifteen')
+        id: $('#comment7')
     },
     {
         time: 16,
-        id: $('#sixteen')
+        id: $('#comment8')
     },
     {
         time: 17,
-        id: $('#seventeen')
+        id: $('#comment9')
     }
 ];
 
